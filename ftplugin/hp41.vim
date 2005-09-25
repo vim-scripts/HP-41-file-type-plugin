@@ -1,6 +1,6 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:		0.1
+" Version:		0.2
 " Maintainer:   Geir Isene
 " Last Change:  2005-09-17
 " URL:          http://www.geir.isene.com/
@@ -17,6 +17,7 @@ set nrformats-=octal
 
 imap <CR> <CR><C-Y><C-Y><C-Y><ESC><C-A>a<SPACE><SPACE><M-+>
 imap <M-L> <LEFT>*LBL<SPACE>
+imap <M-l> <LEFT>*LBL'
 imap <M-G> GTO<SPACE>
 imap <M-T> RTN<CR>
 imap <M-O> STOP<CR>
