@@ -1,6 +1,6 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:		0.4
+" Version:	0.6
 " Maintainer:   Geir Isene
 " Last Change:  2005-09-17
 " URL:          http://www.geir.isene.com/
@@ -53,14 +53,13 @@ imap  <M-+> <ESC>:call Renumber()<CR>a
 map  <M-+> :call Renumber()<CR>
 
 if !exists("*s:Renumber")
-	function Renumber()
-		let s:linenumber = line(".")
-		let s:colnumber = col(".")
-		call cursor(1,1)
-		normal 0cw001
-		while search("^[0-9][0-9][0-9] ", "W") > 0
-			execute "normal 3cl\<c-y>\<c-y>\<c-y>\<esc>\<c-a>"
-		endwhile
-		call cursor(s:linenumber,s:colnumber)
-	endfunction
+    function Renumber()
+	let s:linenumber = line(".")
+	let s:colnumber = col(".")
+	call cursor(1,1)
+	let @r = 1
+        exe "normal 0cw".printf("%03d", @r)
+	2,$s#^\d\d\d #\=printf("%03d ", @r + setreg('r', @r+1))#
+	call cursor(s:linenumber,s:colnumber)
+    endfunction
 endif
