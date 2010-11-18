@@ -1,6 +1,6 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:	0.8
+" Version:	0.8.1
 " Maintainer:   Geir Isene
 " Last Change:  2010-11-28
 " URL:          http://isene.com/
@@ -56,7 +56,7 @@ if !exists("*s:Renumber")
 	call cursor(2,1)
 	let @r = 1
         exe "normal 0cw".printf("%03d", @r)
-	2,$s#^\d\d\d #\=printf("%03d ", @r + setreg('r', @r+1))#
+	2,$s#^\d\d\d#\=printf("%03d", @r + setreg('r', @r+1))#
 	call cursor(s:linenumber,s:colnumber)
     endfunction
 endif
