@@ -4,24 +4,36 @@ This ftplugin has the following features:
 
 Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. If you delete a line, just press <M-+> to renumber the file (either in Normal or Insert mode)
 
-Also, shortcuts to usual commands:
-<M-L> LBL
-<M-l> LBL'    (note: lower case L)
-<M-G> GTO
-<M-T> RTN
-<M-O> STOP
-<M-I> ISG
-<M-D> DSE
-<M-R> RCL
-<M-S> STO
-<M-X> XEQ
-<M-E> ENTER
-<M-Y> X<>Y
-<M-P> PROMPT
-<M-V> VIEW
-<M-A> AVIEW
-<M-C> CLX
-<M-W> Strips the file so that it is ready to be converted to a .RAW file 
+Also, abbreviations of usual commands:
+iab a AVIEW
+iab A AVIEW
+iab c CLX
+iab C CLX
+iab d DSE
+iab D DSE
+iab e ENTER
+iab E ENTER
+iab g GTO
+iab G GTO
+iab i ISG
+iab I ISG
+iab l <LEFT>*LBL
+iab L <LEFT>*LBL
+iab p PROMPT
+iab P PROMPT
+iab r RCL
+iab R RCL
+iab s STO
+iab S STO
+iab t RTN
+iab T RTN
+iab v VIEW
+iab V VIEW
+iab x XEQ
+iab X XEQ
+iab y X<>Y
+iab Y X<>Y
+iab . STOP
 
 There is a matching syntax file here:
 http://vim.sourceforge.net/scripts/script.php?script_id=1360

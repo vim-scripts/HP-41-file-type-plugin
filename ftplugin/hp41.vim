@@ -1,9 +1,9 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:	0.6
+" Version:	0.8
 " Maintainer:   Geir Isene
-" Last Change:  2005-09-17
-" URL:          http://www.geir.isene.com/
+" Last Change:  2010-11-28
+" URL:          http://isene.com/
 
 " Only do this when not done yet for this buffer
 if (exists("b:did_ftplugin"))
@@ -15,48 +15,45 @@ let b:did_ftplugin = 1
 
 set nrformats-=octal
 
-imap <CR> <CR><C-Y><C-Y><C-Y><SPACE><ESC>0<C-A>A<SPACE><M-+>
-imap <M-L> LBL<SPACE>
-imap <M-l> <LEFT>*LBL "
-imap <M-G> GTO<SPACE>
-imap <M-g> GTO<SPACE>
-imap <M-T> RTN<CR>
-imap <M-t> RTN<CR>
-imap <M-O> STOP<CR>
-imap <M-o> STOP<CR>
-imap <M-I> ISG<SPACE>
-imap <M-i> ISG<SPACE>
-imap <M-D> DSE<SPACE>
-imap <M-d> DSE<SPACE>
-imap <M-R> RCL<SPACE>
-imap <M-r> RCL<SPACE>
-imap <M-S> STO<SPACE>
-imap <M-s> STO<SPACE>
-imap <M-X> XEQ<SPACE>
-imap <M-x> XEQ<SPACE>
-imap <M-E> ENTER<CR>
-imap <M-e> ENTER<CR>
-imap <M-Y> X<>Y<CR>
-imap <M-y> X<>Y<CR>
-imap <M-P> PROMPT<CR>
-imap <M-p> PROMPT<CR>
-imap <M-V> VIEW<CR>
-imap <M-v> VIEW<CR>
-imap <M-A> AVIEW<CR>
-imap <M-a> AVIEW<CR>
-imap <M-C> CLX<CR>
-imap <M-c> CLX<CR>
+map <CR> :call Renumber()<CR>
+imap <CR> <CR><C-Y><C-Y><C-Y><SPACE><ESC>0<C-A>:call Renumber()<CR>A
+iab a AVIEW
+iab A AVIEW
+iab c CLX
+iab C CLX
+iab d DSE
+iab D DSE
+iab e ENTER
+iab E ENTER
+iab g GTO
+iab G GTO
+iab i ISG
+iab I ISG
+iab l <LEFT>*LBL
+iab L <LEFT>*LBL
+iab p PROMPT
+iab P PROMPT
+iab r RCL
+iab R RCL
+iab s STO
+iab S STO
+iab t RTN
+iab T RTN
+iab v VIEW
+iab V VIEW
+iab x XEQ
+iab X XEQ
+iab y X<>Y
+iab Y X<>Y
+iab . STOP
 
 map <M-W> :%s/'.*//g<CR>gg<C-V>G4<RIGHT>d
-
-imap  <M-+> <ESC>:call Renumber()<CR>a
-map  <M-+> :call Renumber()<CR>
 
 if !exists("*s:Renumber")
     function Renumber()
 	let s:linenumber = line(".")
 	let s:colnumber = col(".")
-	call cursor(1,1)
+	call cursor(2,1)
 	let @r = 1
         exe "normal 0cw".printf("%03d", @r)
 	2,$s#^\d\d\d #\=printf("%03d ", @r + setreg('r', @r+1))#
