@@ -1,8 +1,8 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:	0.8.1
+" Version:	0.8.3
 " Maintainer:   Geir Isene
-" Last Change:  2010-11-28
+" Last Change:  2012-02-05
 " URL:          http://isene.com/
 
 " Only do this when not done yet for this buffer
@@ -23,8 +23,6 @@ iab c CLX
 iab C CLX
 iab d DSE
 iab D DSE
-iab e ENTER
-iab E ENTER
 iab g GTO
 iab G GTO
 iab i ISG
@@ -33,6 +31,8 @@ iab l <LEFT>*LBL
 iab L <LEFT>*LBL
 iab p PROMPT
 iab P PROMPT
+iab q XEQ
+iab Q XEQ
 iab r RCL
 iab R RCL
 iab s STO
@@ -41,13 +41,8 @@ iab t RTN
 iab T RTN
 iab v VIEW
 iab V VIEW
-iab x XEQ
-iab X XEQ
-iab y X<>Y
-iab Y X<>Y
+iab < X<>Y
 iab . STOP
-
-map <M-W> :%s/'.*//g<CR>gg<C-V>G4<RIGHT>d
 
 if !exists("*s:Renumber")
     function Renumber()

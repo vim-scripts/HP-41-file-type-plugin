@@ -2,7 +2,7 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=1361
 
 This ftplugin has the following features:
 
-Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. If you delete a line, just press <M-+> to renumber the file (either in Normal or Insert mode)
+Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. If you delete a line, just hit Enter to renumber the file (either in Normal or Insert mode)
 
 Also, abbreviations of usual commands:
 iab a AVIEW
